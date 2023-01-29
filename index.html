@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>TaskFrontend</title>
+	<link rel="stylesheet" type="text/css" href="css/fontawesome-5/fontawesome-css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    
+
+</head>
+<body >
+<div class="main">
+	<header>
+
+        <ul class="nav nav-pills mb-3 indicator" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+            </li>
+          </ul>
+        
+    </header>	
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="groups">
+                <span>6 products
+                </span>
+            </div>
+        </div>
+
+<div class="col-md-6">
+
+    <div class="filter-condition">
+        <span>Sort By</span>
+        <select name="" id="select">
+            <option value="Default">Newest First</option>
+            <option value="LowToHigh">Low to high</option>
+            <option value="HighToLow">High to low</option>
+        </select>
+    </div>
+
+ <!-- <span class="fa fa-shopping-cart mainCart"  onclick="addCartItemsToDom()" > -->
+   <span id="cart-btn" class="fa fa-shopping-cart mainCart" onclick="getCartItems()"   > 
+
+    <i class="numberofcard " id="cart">0</i>
+
+ </span>
+
+
+</div>
+</div>
+</div>
+</div>
+</body>
+
+  <div class="cart-modal-overlay" >
+    <div class="cart-modal"   >
+      <i id="close-btn" class="fas fa-times"></i>
+  
+        <h1 class="cart-is-empty">Cart is empty</h1>
+      
+        <div class="product-rows">
+            
+    <div class="container shoppingcart">
+        <div class="row" id="cart_data">
+        </div>
+
+    </div>
+        </div>
+        <div class="total">
+          <h1 class="cart-total">TOTAL</h1>
+            <span class="total-price" id="totalPrice">$0</span>
+              <button class="purchase-btn">PURCHASE</button>
+        </div>
+      </div>
+</div>  
+
+    <!-- <div class="container shoppingcart">
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                <div class="row">
+            
+                    <div class="col-lg col-md-6">
+        
+                        <a href="#" >
+                        <div class="fullbox">
+                            <img src="image/so3.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys dina  elmagnona Value Sponge For Class Cookware</p>
+        
+                                 <span class="price">EGP 3.95</span>  
+                                 <button type="button" onclick='loadData("Spinneys Value Sponge For Class Cookware")'; class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+                                 </button>
+                               
+                                </div>
+                                </li>
+                            </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/so.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/samsung.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/one.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/bz4.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+        
+                        </a>
+                    </div>
+                </div>
+            
+            </div>
+     
+
+
+       
+   
+
+
+
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                <div class="row">
+            
+                    <div class="col-lg col-md-6">
+        
+                        <a href="#" >
+                        <div class="fullbox">
+                            <img src="image/so3.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+        
+                                 <span class="price">EGP 3.95</span>  
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+                                 </button>
+                               
+                                </div>
+                                </li>
+                            </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/so.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/samsung.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/one.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/bz4.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+        
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+            
+                    <div class="col-lg col-md-6">
+        
+                        <a href="#" >
+                        <div class="fullbox">
+                            <img src="image/so3.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+        
+                                 <span class="price">EGP 3.95</span>  
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+                                 </button>
+                               
+                                </div>
+                                </li>
+                            </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/so.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/samsung.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/one.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/bz4.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+        
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+                <div class="row">
+            
+                    <div class="col-lg col-md-6">
+        
+                        <a href="#" >
+                        <div class="fullbox">
+                            <img src="image/so3.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+        
+                                 <span class="price">EGP 3.95</span>  
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+                                 </button>
+                               
+                                </div>
+                                </li>
+                            </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/so.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/samsung.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/one.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/bz4.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+        
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+            
+                    <div class="col-lg col-md-6">
+        
+                        <a href="#" >
+                        <div class="fullbox">
+                            <img src="image/so3.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+        
+                                 <span class="price">EGP 3.95</span>  
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+                                 </button>
+                               
+                                </div>
+                                </li>
+                            </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/so.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/samsung.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/one.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/bz4.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+        
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row">
+            
+                    <div class="col-lg col-md-6">
+        
+                        <a href="#" >
+                        <div class="fullbox">
+                            <img src="image/so3.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+        
+                                 <span class="price">EGP 3.95</span>  
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+                                 </button>
+                               
+                                </div>
+                                </li>
+                            </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/so.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/samsung.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/one.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/bz4.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+        
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+            
+                    <div class="col-lg col-md-6">
+        
+                        <a href="#" >
+                        <div class="fullbox">
+                            <img src="image/so3.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+        
+                                 <span class="price">EGP 3.95</span>  
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+                                 </button>
+                               
+                                </div>
+                                </li>
+                            </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/so.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/samsung.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/one.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+                        </a>
+                    </div>
+        
+        
+                    <div class="col-lg col-md-6">
+                        <a href="#">
+        
+                        <div class="fullbox">
+                            <img src="image/bz4.png">
+                            <span> <i class="far fa-heart"></i></span>
+                            <p>Spinneys Value Sponge For Class Cookware</p>
+                                 <span class="price">EGP 3.95</span>
+          
+                                 <button type="button" class="btn btn-outline-danger addtocart">Add to cart
+                                    <span class="numcart">1</span>
+        
+        
+                                 </button>
+                                </div>
+        
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+      
+
+    </div> --> 
+
+
+
+
+    <div class="container shoppingcart">
+        <div class="row" id="allData">
+        </div>
+
+        <div class="row" id="allData"></div>
+    </div>
+
+
+
+  
+
+
+
+  
+<script  src="js/bootstrap-bundle.js"></script>
+<script  src="js/bootstrap.js"></script>
+<script  src="js/jquery-3.5.1.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="./js/main.js"></script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+
